@@ -1,4 +1,5 @@
 
+
 import 'package:expenses/components/transaction_form.dart';
 import './components/transaction_form.dart';
 import 'components/transaction_list.dart';
@@ -52,6 +53,8 @@ class _MyHomePageState extends State<MyHomePage> {
     setState(() {
       _transactions.add(newTransaction);
     });
+
+    Navigator.of(context).pop();
   }
 
   _openTransactionFormModal(BuildContext context){
