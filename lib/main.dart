@@ -20,6 +20,16 @@ class ExpensesApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.cyan,
         accentColor: Colors.red,
+        fontFamily: 'QuickSand',
+        appBarTheme: AppBarTheme(
+          textTheme: ThemeData.light().textTheme.copyWith(
+            headline6:TextStyle(
+              fontFamily:'QuickSand',
+              fontSize:20,
+              fontWeight: FontWeight.bold
+            )
+          )
+        )
       ),
     );
   }
