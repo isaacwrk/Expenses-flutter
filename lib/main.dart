@@ -16,7 +16,11 @@ class ExpensesApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      home:MyHomePage()
+      home:MyHomePage(),
+      theme: ThemeData(
+        primarySwatch: Colors.cyan,
+        accentColor: Colors.red,
+      ),
     );
   }
 }
@@ -70,6 +74,7 @@ class _MyHomePageState extends State<MyHomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar:AppBar(
+        backgroundColor: Colors.greenAccent.shade400,
         title:Text('Despesas Pessoais'),
         actions:<Widget> [
           IconButton(
