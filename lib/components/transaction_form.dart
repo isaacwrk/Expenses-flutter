@@ -5,7 +5,7 @@ import 'package:intl/intl.dart';
 
 class TransactionForm extends StatefulWidget {
   
-  final void Function(String,double) onSubmit;
+  final void Function(String,double,DateTime) onSubmit;
 
   TransactionForm(this.onSubmit);
 
@@ -25,7 +25,7 @@ class _TransactionFormState extends State<TransactionForm> {
           if(title.isEmpty || value <= 0){
             return;
           }
-          widget.onSubmit(title,value);
+          widget.onSubmit(title,value,selectedDate!);
     }
 
 
@@ -73,7 +73,7 @@ class _TransactionFormState extends State<TransactionForm> {
                       child: Row
                       (children: [
                         Expanded(
-                                                  child: Text(
+                            child: Text(
                             selectedDate == null ? 'Nenhuma data selecionada!'
                             : 'Data Selecionada: ${DateFormat('dd/MM/y').format(selectedDate!)}',
                             ),
