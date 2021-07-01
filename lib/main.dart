@@ -92,6 +92,7 @@ class _MyHomePageState extends State<MyHomePage> {
       appBar:AppBar(
         backgroundColor: Colors.blueAccent.shade700,
         title:Text('Despesas Pessoais'),
+        centerTitle: true,
         actions:<Widget> [
           IconButton(
             icon: Icon(Icons.add),
