@@ -1,3 +1,5 @@
+
+
 import 'package:flutter/material.dart';
 
 class TransactionForm extends StatefulWidget {
@@ -48,13 +50,27 @@ class _TransactionFormState extends State<TransactionForm> {
                         labelText: 'Valor(R\$)',
                       )
                     ),
+                    Container(
+                      height: 70,
+                      child: Row
+                      (children: [
+                        Text('Nenhuma data selecionada!'),
+                        FlatButton(
+                          textColor: Theme.of(context).primaryColor,
+                          child: Text('Selecionar Data',style: TextStyle(
+                            fontWeight: FontWeight.bold
+                          ),),
+                          onPressed: (){},
+                        )
+                      ],),
+                    ),
                     Row(
                       mainAxisAlignment: MainAxisAlignment.end,
                       children: [
-                        FlatButton(
-                          child: Text('Nova Transação'),
-                          color: Colors.greenAccent,
-                          textColor: Colors.grey[600],
+                        RaisedButton(
+                          child: Text('Nova Transação', style: TextStyle(fontWeight: FontWeight.bold),),
+                          color: Theme.of(context).primaryColor,
+                          textColor: Colors.white,
                           onPressed: _submitForm,
                         ),
                       ],

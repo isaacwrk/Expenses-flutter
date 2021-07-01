@@ -26,6 +26,10 @@ class ExpensesApp extends StatelessWidget {
               fontFamily:'QuickSand',
               fontSize:20,
               fontWeight: FontWeight.bold
+            ),
+            button: TextStyle(
+              color: Colors.white,
+              fontWeight: FontWeight.bold
             )
           )
         )
