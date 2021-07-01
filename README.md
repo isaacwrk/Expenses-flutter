@@ -15,3 +15,4 @@ This project is a expenses app basically a CRUD, you can create a new expense an
  1. Create a personal Icon
  2. Loading window
  3. Improvments in the theme.
+ 4. Work with media query.
