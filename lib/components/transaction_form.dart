@@ -1,6 +1,7 @@
 
 
 import 'package:flutter/material.dart';
+import 'package:intl/intl.dart';
 
 class TransactionForm extends StatefulWidget {
   
@@ -14,8 +15,8 @@ class TransactionForm extends StatefulWidget {
 
 class _TransactionFormState extends State<TransactionForm> {
   final titleController = TextEditingController();
-
   final valueController = TextEditingController();
+   DateTime ?selectedDate;
 
     _submitForm(){
 
@@ -26,6 +27,23 @@ class _TransactionFormState extends State<TransactionForm> {
           }
           widget.onSubmit(title,value);
     }
+
+
+  _showDatePicker(){
+    showDatePicker(
+      context: context,
+      initialDate: DateTime.now(),
+      firstDate: DateTime(2021),
+      lastDate: DateTime.now(),
+    ).then((pickedDate){
+      if(pickedDate == null){
+        return;
+      }
+      setState(() {
+        selectedDate = pickedDate;
+      });
+    });
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -54,13 +72,18 @@ class _TransactionFormState extends State<TransactionForm> {
                       height: 70,
                       child: Row
                       (children: [
-                        Text('Nenhuma data selecionada!'),
+                        Expanded(
+                                                  child: Text(
+                            selectedDate == null ? 'Nenhuma data selecionada!'
+                            : 'Data Selecionada: ${DateFormat('dd/MM/y').format(selectedDate!)}',
+                            ),
+                        ),
                         FlatButton(
                           textColor: Theme.of(context).primaryColor,
                           child: Text('Selecionar Data',style: TextStyle(
                             fontWeight: FontWeight.bold
                           ),),
-                          onPressed: (){},
+                          onPressed:  _showDatePicker,
                         )
                       ],),
                     ),
